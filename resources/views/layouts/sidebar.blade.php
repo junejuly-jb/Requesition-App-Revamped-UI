@@ -21,18 +21,27 @@
         </div>
         <div class="p-4 pt-5">
             <h1>
-                <a href="index.html" class="logo">MSRO</a>
+                <a href="/home" class="logo">MSRO</a>
             </h1>
         <ul class="list-unstyled components mb-5">
-            <li>
-                <a href="#"><img src="{{asset('storage/icons/dashboard.png')}}" width="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</a>
-            </li>
-            <li>
-            <a href="#"><img src="{{asset('storage/icons/user.png')}}" width="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Profile</a>
-            </li>
-            <!-- <li>
-            <a href="#">Contact</a>
-            </li> -->
+            @if (Request::path() == 'home')
+                <li>
+                    <a href="/home" class="activeLink"><img src="{{asset('storage/icons/dashboard.png')}}" width="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</a>
+                </li>
+                <li>
+                    <a href="/myProfile"><img src="{{asset('storage/icons/user.png')}}" width="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Profile</a>
+                </li>
+            @endif
+            @if (Request::path() == 'myProfile')
+                <li>
+                    <a href="/home"><img src="{{asset('storage/icons/dashboard.png')}}" width="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</a>
+                </li>
+                <li>
+                    <a href="/myProfile" class="activeLink"><img src="{{asset('storage/icons/user.png')}}" width="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Profile</a>
+                </li>
+            @endif
+            
+            
         </ul>
 
         </div>
